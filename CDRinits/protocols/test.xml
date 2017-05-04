@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<protocol>
+    <field>
+        <format>MM/dd</format>
+        <includedInCdr>false</includedInCdr>
+        <length>6</length>
+        <name>date</name>
+    </field>
+    <field>
+        <format>hh:mm</format>
+        <includedInCdr>true</includedInCdr>
+        <length>4</length>
+        <name>time</name>
+    </field>
+    <field>
+        <format>hmmd</format>
+        <includedInCdr>true</includedInCdr>
+        <length>4</length>
+        <name>duration</name>
+    </field>
+    <field>
+        <format></format>
+        <includedInCdr>true</includedInCdr>
+        <length>15</length>
+        <name>calling_num</name>
+    </field>
+</protocol>

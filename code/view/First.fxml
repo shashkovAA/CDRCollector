@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar nodeOrientation="RIGHT_TO_LEFT" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="About">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Debug">
+                  <items>
+                        <Menu mnemonicParsing="false" text="Log Level">
+                          <items>
+                              <RadioMenuItem mnemonicParsing="false" text="Fatal   ">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="logLevelGroup" />
+                                 </toggleGroup>
+                              </RadioMenuItem>
+                              <RadioMenuItem mnemonicParsing="false" text="Error   " toggleGroup="$logLevelGroup" />
+                              <RadioMenuItem mnemonicParsing="false" text="Warning  " toggleGroup="$logLevelGroup" />
+                              <RadioMenuItem mnemonicParsing="false" text="Inform   " toggleGroup="$logLevelGroup" />
+                              <RadioMenuItem mnemonicParsing="false" text="Debug   " toggleGroup="$logLevelGroup" />
+                          </items>
+                        </Menu>
+                        <MenuItem mnemonicParsing="false" text="Open Logfile " />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <bottom>
+            <AnchorPane prefHeight="25.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="20.0" layoutY="4.0" text="Collector status :" AnchorPane.leftAnchor="20.0">
+                     <font>
+                        <Font name="Cambria Math" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="4.0" text="Disconnected" AnchorPane.leftAnchor="125.0">
+                     <font>
+                        <Font name="Cambria Math" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="4.0" text="Client status :" AnchorPane.leftAnchor="230.0">
+                     <font>
+                        <Font name="Cambria Math" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="4.0" text="Stop" AnchorPane.leftAnchor="320.0">
+                     <font>
+                        <Font name="Cambria Math" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="4.0" text="Client IP :" AnchorPane.leftAnchor="380.0">
+                     <font>
+                        <Font name="Cambria Math" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="4.0" text="192.168.245.245" AnchorPane.leftAnchor="445.0">
+                     <font>
+                        <Font name="Cambria Math" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="4.0" text="12.12.2016 15:33" AnchorPane.rightAnchor="20.0">
+                     <font>
+                        <Font name="Cambria Math" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </bottom>
+         <left>
+            <Accordion prefHeight="550.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <panes>
+                <TitledPane animated="false" text="Home">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="15.0" layoutY="10.0" prefHeight="23.0" prefWidth="38.0" text="Port" AnchorPane.leftAnchor="15.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="34.6" layoutY="59.6" prefHeight="25.0" prefWidth="70.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="30.0" />
+                              <Label layoutX="15.0" layoutY="80.0" text="Protocol" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="70.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox layoutX="25.0" layoutY="121.0" prefHeight="25.0" prefWidth="147.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="100.0" />
+                              <ToggleSwitch layoutX="95.0" layoutY="157.0" prefHeight="18.0" prefWidth="32.0" />
+                              <Label layoutX="25.0" layoutY="158.0" text="On/Off">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                </TitledPane>
+                <TitledPane animated="false" text="Protocols">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView layoutY="28.0" prefHeight="301.0" prefWidth="200.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn prefWidth="199.0" text="Protocols" visible="false" />
+                                </columns>
+                              </TableView>
+                              <Button layoutX="23.0" layoutY="344.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="Button" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="10.0" />
+                              <Button layoutX="139.0" layoutY="344.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="Button" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="130.0" />
+                              <Button layoutX="82.0" layoutY="344.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="Button" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="70.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                </TitledPane>
+                <TitledPane animated="false" text="Storage">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                </TitledPane>
+                  <TitledPane animated="false" text="Console">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TitledPane>
+              </panes>
+            </Accordion>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.textfield.*?>
+<?import javafx.geometry.*?>
+<?import org.controlsfx.control.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="sqlBar" prefHeight="525.0" prefWidth="800.0" stylesheets="@../../bin/application/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SqlBarController">
+  <children>
+      <ToggleSwitch fx:id="tglOnOffSqlServerConnect" layoutX="130.0" layoutY="36.0" onMouseClicked="#onOffSqlServerConnect" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="20.0" />
+      <GridPane fx:id="grdPane" layoutX="87.0" layoutY="98.0" prefHeight="192.0" prefWidth="522.0" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="60.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="110.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="10.0" prefWidth="169.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="10.0" prefWidth="111.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="10.0" prefWidth="179.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="17.0" prefWidth="135.0" text="Тип сервера :" />
+            <ComboBox fx:id="cmbSqlServerType" onAction="#cmbChangeValue" prefHeight="25.0" prefWidth="150.0" GridPane.columnIndex="1" />
+            <Label prefHeight="17.0" prefWidth="114.0" text="IP адрес :" GridPane.columnIndex="2">
+               <padding>
+                  <Insets left="20.0" />
+               </padding></Label>
+            <Label prefHeight="17.0" prefWidth="109.0" text="Логин :" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="110.0" text="Пароль :" GridPane.rowIndex="2" />
+            <Button fx:id="btnCheckSqlServerConnect" mnemonicParsing="false" onAction="#btnClickCheckSqlServerConnect" prefHeight="25.0" prefWidth="150.0" text="Тест соединения" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <CustomTextField fx:id="txtSqlServerIp" maxWidth="150.0" onKeyReleased="#txtIpkeyRelesed" onKeyTyped="#txtIpkeyTyped" onMouseClicked="#txtIpclickMouse" GridPane.columnIndex="3" />
+            <CustomTextField fx:id="txtSqlServerLogin" maxWidth="150.0" onKeyReleased="#txtLoginKeyReleased" onMouseClicked="#txtLoginMouseClick" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <CustomPasswordField fx:id="txtSqlServerPassword" maxWidth="150.0" onKeyReleased="#txtPasswordKeyReleased" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Порт :" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+            <CustomTextField fx:id="txtSqlServerPort" maxWidth="70.0" onKeyReleased="#txtPortKeyReleased" onKeyTyped="#txtPortKeyTyped" onMouseClicked="#txtPortclickMouse" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Label layoutX="14.0" layoutY="484.0" text="Записей в базе :" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="30.0" />
+      <Label fx:id="lblSqlRecordsCount" layoutX="127.0" layoutY="503.0" text="-" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="130.0" />
+   </children>
+</AnchorPane>

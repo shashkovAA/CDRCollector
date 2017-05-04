@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.embed.swing.*?>
+<?import org.controlsfx.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="600.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RootController">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="100.0" tabMaxWidth="100.0" tabMinHeight="25.0" tabMinWidth="100.0" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab closable="false" text="АТС 1">
+                     <content>
+                        <fx:include fx:id="hBar" source="HBar.fxml" />
+                     </content></Tab>
+                <Tab closable="false" text="Выборка">
+                     <content>
+                        <fx:include fx:id="sBar" source="SelectBar.fxml" />
+                     </content></Tab>
+                  <Tab closable="false" text="Хранилище">
+                     <content>
+                        <fx:include fx:id="sqlBar" source="SqlBar.fxml" />
+                     </content></Tab>
+                  <Tab closable="false" text="Протокол" />
+                  <Tab closable="false" text="Консоль">
+                     <content>
+                        <fx:include fx:id="cBar" source="ConsoleBar.fxml" />
+                     </content></Tab>
+              </tabs>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </TabPane>
+         </center>
+         <bottom>
+            <AnchorPane prefHeight="28.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Separator layoutX="117.0" layoutY="11.0" prefHeight="3.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Label layoutX="22.0" layoutY="6.0" text="Статус сборщика :" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="30.0">
+                     <font>
+                        <Font name="Cambria" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="256.0" layoutY="11.0" text="Статус клиента :" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="250.0">
+                     <font>
+                        <Font name="Cambria Math" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblClientStatus" layoutX="362.0" layoutY="11.0" text="Не подключен" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="360.0">
+                     <font>
+                        <Font name="Cambria Math" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="imgStatus" fitHeight="16.0" fitWidth="16.0" layoutX="147.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="160.0" />
+               </children>
+            </AnchorPane>
+         </bottom>
+         <top>
+            <VBox prefHeight="20.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MenuBar fx:id="menuBar1">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="Приложение">
+                        <items>
+                              <MenuItem fx:id="mntBackground" mnemonicParsing="false" onAction="#handleBackground" text="Фоновый режим" />
+                          <MenuItem fx:id="mntExit" mnemonicParsing="false" onAction="#handleExitDialog" text="Выйти" />
+                        </items>
+                      </Menu>
+                        <Menu mnemonicParsing="false" text="Журнал">
+                          <items>
+                              <Menu fx:id="mnLogLevel" mnemonicParsing="false" text="Настроить уровень журналирования в файл">
+                                 <items>
+                                    <RadioMenuItem fx:id="rdmnFatal" mnemonicParsing="false" onAction="#setLogFatal" text="Fatal">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="tglGroupLogLevel" />
+                                       </toggleGroup></RadioMenuItem>
+                                    <RadioMenuItem fx:id="rdmnError" mnemonicParsing="false" onAction="#setLogError" text="Error" toggleGroup="$tglGroupLogLevel" />
+                                    <RadioMenuItem fx:id="rdmnWarning" mnemonicParsing="false" onAction="#setLogWarning" text="Warning" toggleGroup="$tglGroupLogLevel" />
+                                    <RadioMenuItem fx:id="rdmnInfo" mnemonicParsing="false" onAction="#setLogInfo" text="Info" toggleGroup="$tglGroupLogLevel" />
+                                    <RadioMenuItem fx:id="rdmnDebug" mnemonicParsing="false" onAction="#setLogDebug" text="Debug" toggleGroup="$tglGroupLogLevel" />
+                                 </items>
+                              </Menu>
+                              <MenuItem fx:id="mnOpenFolder" mnemonicParsing="false" onAction="#openLogFolder" text="Открыть расположение файла журнала" />
+                              <MenuItem fx:id="mnOpenCdrFolder" mnemonicParsing="false" onAction="#openCdrFolder" text="Открыть расположение файлов CDR" />
+                              <MenuItem fx:id="mnOpenFile" mnemonicParsing="false" onAction="#openLogFile" text="Открыть файл журнала" />
+                          </items>
+                        </Menu>
+                      <Menu mnemonicParsing="false" text="Помощь">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Информация" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

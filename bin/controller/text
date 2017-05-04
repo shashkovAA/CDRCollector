@@ -1,0 +1,33 @@
+
+
+    @FXML
+    void clckFind(ActionEvent event) {
+
+    }
+
+    @FXML
+    void clckGetDateTime(ActionEvent event) {
+
+    }
+
+    @FXML
+    void clckLinkToday(ActionEvent event) {
+
+    }
+
+    @FXML
+    void clckLinkOneDay(ActionEvent event) {
+
+    }
+
+    @FXML
+    void clckLnkLastWeek(ActionEvent event) {
+
+    }
+
+    @FXML
+    void clckLnkLastMonth(ActionEvent event) {
+
+    }
+
+}

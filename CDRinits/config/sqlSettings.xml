@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Sql server connection properties</comment>
+<entry key="enableSaveCdrToDB">true</entry>
+<entry key="sqlServerLogin">java</entry>
+<entry key="sqlServerPort">1433</entry>
+<entry key="sqlServerPassword">javaconnect</entry>
+<entry key="sqlServerIp">192.168.245.50</entry>
+<entry key="sqlServerType">MS SQL Server</entry>
+</properties>

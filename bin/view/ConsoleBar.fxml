@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import org.controlsfx.control.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="cBar" prefHeight="515.0" prefWidth="800.0" stylesheets="@../../bin/application/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ConsoleBarController">
+   <children>
+      <TextArea fx:id="txtConsole" layoutX="14.0" layoutY="59.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0" />
+      <HBox layoutX="106.0" layoutY="20.0" spacing="4.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="17.0">
+         <children>
+            <Label layoutX="106.0" layoutY="24.0" text="Уровень логирования :">
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </Label>
+            <ComboBox fx:id="cmbLogLevel" layoutX="259.0" layoutY="24.0" onAction="#setConsoleLogingLevel" prefWidth="90.0" AnchorPane.topAnchor="20.0" />
+         </children>
+      </HBox>
+      <Button fx:id="btnClearLogConsole" layoutX="728.0" layoutY="33.0" mnemonicParsing="false" onAction="#clearLogConsole" text="Очистить" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="17.0" />
+   </children>
+</AnchorPane>

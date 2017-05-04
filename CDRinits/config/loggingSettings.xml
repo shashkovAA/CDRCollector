@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Custom logging properties</comment>
+<entry key="logFileCount">5</entry>
+<entry key="logLevelAppConsole">warn</entry>
+<entry key="logLevelConsole">info</entry>
+<entry key="logFileSize">1 Mb</entry>
+<entry key="logFileLevel">info</entry>
+</properties>

@@ -1,0 +1,79 @@
+   // **********************************************************************************************
+    // ===
+    private static void savePropertiesTXT(File file, Properties proper, String comments) {
+	try (FileWriter out = new FileWriter(file);) {
+	    proper.store(out, comments);
+
+	} catch (IOException e) {
+	    Debug.log.error(e.getMessage());
+	}
+    }
+    // **********************************************************************************************
+    // ===
+
+    private static void savePropertiesXML(File file, Properties proper) {
+
+	try (FileOutputStream fos = new FileOutputStream(file);) {
+	    proper.storeToXML(fos, "My Comments");
+
+	} catch (IOException e) {
+	}
+    }
+    // **********************************************************************************************
+    // ===
+
+    private static Properties getPropertiesFromTXT(File file) {
+	Properties propers = new Properties();
+
+	try (FileReader in = new FileReader(file);) {
+	    propers.load(in);
+
+	} catch (FileNotFoundException e1) {
+	    e1.printStackTrace();
+	} catch (IOException e1) {
+	    e1.printStackTrace();
+	}
+
+	return propers;
+    }
+
+    // ************************************************************************************************************
+    // ===
+    private static Properties getPropertiesFromTXT(String fileName) {
+	Properties propers = new Properties();
+
+	File myFile = new File(fileName);
+
+	if (!myFile.exists()) {
+	    propers.clear();
+	    return propers;
+	}
+
+	try (FileReader in = new FileReader(myFile);) {
+	    propers.load(in);
+
+	} catch (FileNotFoundException e1) {
+	    Debug.log.error(e1.getMessage());
+	} catch (IOException e1) {
+	    Debug.log.error(e1.getMessage());
+	}
+
+	return propers;
+    }
+
+    // **********************************************************************************************
+    // ===
+    private static Properties getPropertiesFromXML(File file) {
+	Properties propers = new Properties();
+
+	try (FileInputStream in = new FileInputStream(file);) {
+	    propers.loadFromXML(in);
+
+	} catch (FileNotFoundException e1) {
+	    e1.printStackTrace();
+	} catch (IOException e1) {
+	    e1.printStackTrace();
+	}
+
+	return propers;
+    }

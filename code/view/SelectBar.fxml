@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import org.controlsfx.control.textfield.*?>
+<?import jfxtras.scene.control.*?>
+<?import jfxtras.labs.scene.control.window.*?>
+<?import jfxtras.labs.scene.control.grid.cell.*?>
+<?import jfxtras.labs.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="sBar" prefHeight="525.0" prefWidth="800.0" stylesheets="@../../bin/application/SelectBar.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SelectBarController">
+   <children>
+      <Button fx:id="btnFind" layoutX="675.0" layoutY="20.0" mnemonicParsing="false" onAction="#clckFind" prefWidth="100.0" text="Поиск" />
+      <Button fx:id="btnShowDateTime" layoutX="675.0" layoutY="68.0" mnemonicParsing="false" onAction="#clckGetDateTime" prefHeight="25.0" prefWidth="100.0" text="Show" />
+      <Pane fx:id="paneTime" layoutX="52.0" layoutY="219.0" prefHeight="120.0" prefWidth="280.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Label alignment="CENTER" layoutX="7.0" layoutY="7.0" prefHeight="17.0" prefWidth="52.0" text="Время" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <HBox layoutX="124.0" layoutY="5.0" prefHeight="23.0" prefWidth="142.0">
+               <children>
+                  <Hyperlink fx:id="lnkToday" onAction="#clckLinkToday" text="Сегодня" />
+                  
+                  <Hyperlink fx:id="lnkOneDay" onAction="#clckLinkCurrentWeek" text="Н">
+                     <tooltip>
+                        <Tooltip text="Текущая неделя " />
+                     </tooltip></Hyperlink>
+                  <Hyperlink fx:id="lnkLastWeek" onAction="#clckLinkCurrentMonth" text="М">
+                     <tooltip>
+                        <Tooltip text="Текущий месяц" />
+                     </tooltip></Hyperlink>
+                  <Hyperlink fx:id="lnkLastMonth" onAction="#clckLinkCurrentYear" text="Г">
+                     <tooltip>
+                        <Tooltip text="Текущий год" />
+                     </tooltip></Hyperlink>
+                  <Hyperlink fx:id="lnkClearDateTime" onAction="#clckLinkClearDateTime">
+                     <graphic>
+                        <ImageView fx:id="imgClearLink" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Hyperlink>
+               </children>
+            </HBox>
+            <GridPane layoutX="42.0" layoutY="37.0" prefHeight="60.0" prefWidth="203.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="53.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="150.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="От" />
+                  <Label text="До" GridPane.rowIndex="1" />
+                  <LocalDateTimeTextField fx:id="txtDateTimeBegin" prefHeight="25.0" prefWidth="140.0" text="" GridPane.columnIndex="1" />
+                  <LocalDateTimeTextField fx:id="txtDateTimeEnd" prefHeight="25.0" prefWidth="140.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </children></Pane>
+      <Pane fx:id="paneNumber" layoutX="62.0" layoutY="229.0" prefHeight="120.0" prefWidth="280.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="150.0">
+         <children>
+            <Label alignment="CENTER" layoutX="7.0" layoutY="7.0" prefHeight="17.0" prefWidth="52.0" text="Номер" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <GridPane alignment="CENTER" layoutX="45.0" layoutY="36.0" prefHeight="60.0" prefWidth="231.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="10.0" prefWidth="56.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="130.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="50.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Кто" />
+                  <Label text="Кому" GridPane.rowIndex="1" />
+                  <CustomTextField fx:id="txtCallingNumber" prefHeight="25.0" prefWidth="120.0" GridPane.columnIndex="1" />
+                  <CustomTextField fx:id="txtDnis" prefHeight="25.0" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <CheckBox fx:id="chkbINcludeCallingNumber" mnemonicParsing="false" prefHeight="17.0" prefWidth="8.0" GridPane.columnIndex="2">
+                     <tooltip>
+                        <Tooltip text="Может содержать &#10;указанную комбинацию &#10;цифр в номере" />
+                     </tooltip>
+                  </CheckBox>
+                  <CheckBox fx:id="chkbIncludeDnis" mnemonicParsing="false" prefHeight="17.0" prefWidth="9.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <tooltip>
+                        <Tooltip text="Может содержать &#10;указанную комбинацию &#10;цифр в номере" />
+                     </tooltip>
+                  </CheckBox>
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+      <Pane fx:id="paneDirection" layoutX="372.0" layoutY="20.0" prefHeight="80.0" prefWidth="280.0" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Label alignment="CENTER" layoutX="7.0" layoutY="7.0" prefHeight="17.0" prefWidth="85.0" text="Направление" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <ComboBox fx:id="cmbDirection" layoutX="100.0" layoutY="26.0" prefHeight="25.0" prefWidth="160.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="panePBX" layoutX="372.0" layoutY="104.0" prefHeight="80.0" prefWidth="280.0" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="110.0">
+         <children>
+            <Label alignment="CENTER" layoutX="7.0" layoutY="7.0" prefHeight="17.0" prefWidth="58.0" text="Станция" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <ComboBox fx:id="cmbPbx" layoutX="100.0" layoutY="26.0" prefHeight="25.0" prefWidth="160.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneCallType" layoutX="330.0" layoutY="199.0" prefHeight="80.0" prefWidth="280.0" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="200.0">
+         <children>
+            <Label alignment="CENTER" layoutX="7.0" layoutY="7.0" prefHeight="17.0" prefWidth="76.0" text="Тип вызова" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <ComboBox fx:id="cmbCallType" layoutX="100.0" layoutY="26.0" prefHeight="25.0" prefWidth="160.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneRegion" layoutX="330.0" layoutY="290.0" prefHeight="80.0" prefWidth="280.0" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="290.0">
+         <children>
+            <Label alignment="CENTER" layoutX="7.0" layoutY="7.0" prefHeight="17.0" prefWidth="58.0" text="Регион" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <ComboBox fx:id="cmbRegion" layoutX="100.0" layoutY="26.0" prefHeight="25.0" prefWidth="160.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneDuration" layoutX="20.0" layoutY="280.0" prefHeight="90.0" prefWidth="280.0" AnchorPane.topAnchor="280.0">
+         <children>
+            <Label alignment="CENTER" layoutX="7.0" layoutY="7.0" prefHeight="17.0" prefWidth="150.0" text="Длительность вызова" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <HBox layoutX="80.0" layoutY="40.0" prefHeight="25.0" prefWidth="160.0" spacing="5.0">
+               <children>
+                  <ComboBox fx:id="cmbCondition" onAction="#changeValueCmbDuration" prefHeight="25.0" prefWidth="60.0" />
+                  <CustomTextField fx:id="txtDuration" prefHeight="25.0" prefWidth="58.0" />
+                  <Label alignment="CENTER" prefHeight="21.0" prefWidth="33.0" text="сек." textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+                     <padding>
+                        <Insets top="4.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      </children>
+</AnchorPane>

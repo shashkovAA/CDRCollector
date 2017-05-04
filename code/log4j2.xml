@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration packages="application">
+ <Appenders>
+ 	
+ 	<RollingFile name="File" append="true" fileName="${sys:logFileName}.txt"  filePattern = "${sys:logFileName}-%i.txt" >
+ 		<PatternLayout pattern="%d{dd/MM/yy HH:mm:ss:SSS} %-5p [%t] %C{2} (%F:%L) - %m%n"/>
+ 		<Policies>
+           	<SizeBasedTriggeringPolicy size="${sys:logFileSize}"/>
+      	</Policies>
+      	<DefaultRolloverStrategy max="${sys:logFileCount}"/>
+ 	</RollingFile>
+ 	
+ 	<TextAreaAppender name="ConsoleTabLogger">
+            <PatternLayout pattern="%d{dd/MM/yy HH:mm:ss:SSS} %-5p [%t] [%file -> %method : %line] - %msg%n"/>
+      </TextAreaAppender>
+ 	
+ 	<Console name="STDOUT" target="SYSTEM_OUT">
+ 	
+ 		<PatternLayout pattern="%d{dd/MM/yy HH:mm:ss:SSS} %-5p [%t] %C{2} (%F:%L) - %m%n"/>
+ 		
+	</Console>
+	 
+ </Appenders>
+ 
+ <Loggers>
+	
+	<Logger name="application.Debug" level="debug" additivity="false">
+	
+ 		<AppenderRef ref="File" level="${sys:logFileLevel}"/>
+ 		<AppenderRef ref="STDOUT" level="${sys:logLevelConsole}"/>
+ 		<AppenderRef ref ="ConsoleTabLogger" level="${sys:logLevelAppConsole}"/>
+ 		
+ 	</Logger>
+ 	
+ 	
+ 	<Root  level="error">
+		 <AppenderRef ref="STDOUT"/>
+ 	</Root>
+ 	
+ </Loggers>
+</Configuration>
