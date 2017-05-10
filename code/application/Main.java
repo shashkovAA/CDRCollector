@@ -45,13 +45,13 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
 	Debug.log.info("Start application.");
 	/**
-	 * Настройка ниже нужна, чтобы приложение не закрывалось при нажатии на
-	 * крестик окна.
+	 * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ
+	 * пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ.
 	 */
 	Platform.setImplicitExit(false);
 
 	this.primaryStage = primaryStage;
-	this.primaryStage.setTitle("W-Тарификатор");
+	this.primaryStage.setTitle("W-РўР°СЂРёС„РёРєР°С‚РѕСЂ");
 	// this.primaryStage.setAlwaysOnTop(true);
 	this.primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("../sources/iconMain32.png")));
 
@@ -63,13 +63,13 @@ public class Main extends Application {
 	    public void handle(WindowEvent winEvent) {
 
 		Alert alert = new Alert(AlertType.CONFIRMATION);
-		alert.setTitle("Выход из программы W-Тарификатор");
+		alert.setTitle("Р’С‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹ W-РўР°СЂРёС„РёРєР°С‚РѕСЂ");
 		alert.setHeaderText("");
-		alert.setContentText("Если вы хотите закрыть приложение, нажмите 'Выход'. \n"
-			+ "Для работы приложения в фоновом режиме, нажмите 'Фоновый режим'");
+		alert.setContentText("Р•СЃР»Рё РІС‹ С…РѕС‚РёС‚Рµ Р·Р°РєСЂС‹С‚СЊ РїСЂРёР»РѕР¶РµРЅРёРµ, РЅР°Р¶РјРёС‚Рµ 'Р’С‹С…РѕРґ'. \n"
+			+ "Р”Р»СЏ СЂР°Р±РѕС‚С‹ РїСЂРёР»РѕР¶РµРЅРёСЏ РІ С„РѕРЅРѕРІРѕРј СЂРµР¶РёРјРµ, РЅР°Р¶РјРёС‚Рµ 'Р¤РѕРЅРѕРІС‹Р№ СЂРµР¶РёРј'");
 
-		ButtonType buttonTypeOne = new ButtonType("Выход");
-		ButtonType buttonTypeTwo = new ButtonType("Фоновый режим");
+		ButtonType buttonTypeOne = new ButtonType("Р’С‹С…РѕРґ");
+		ButtonType buttonTypeTwo = new ButtonType("Р¤РѕРЅРѕРІС‹Р№ СЂРµР¶РёРј");
 
 		alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
 
@@ -98,8 +98,8 @@ public class Main extends Application {
 
     public void hideProgrammToTray(Stage mStage) {
 	mStage.hide();
-	trayIcon.displayMessage("Я еще работаю!",
-		"Если вы хотите закрыть приложение, воспользуйтель меню Приложение -> Выйти.",
+	trayIcon.displayMessage("РЇ РµС‰Рµ СЂР°Р±РѕС‚Р°СЋ!",
+			"Р•СЃР»Рё РІС‹ С…РѕС‚РёС‚Рµ Р·Р°РєСЂС‹С‚СЊ РїСЂРёР»РѕР¶РµРЅРёРµ, РІРѕСЃРїРѕР»СЊР·СѓР№С‚РµР»СЊ РјРµРЅСЋ РџСЂРёР»РѕР¶РµРЅРёРµ -> Р’С‹Р№С‚Рё.",
 		java.awt.TrayIcon.MessageType.INFO);
     }
 
@@ -121,13 +121,12 @@ public class Main extends Application {
     }
 
     @Override
-    public void stop() // =======Выход из программы=================
+    public void stop() 
     {
 
     }
 
-    // ===Инициализация любых данных, до включения основного потока Start в
-    // работу.
+  
 
     @Override
     public void init() {
@@ -164,7 +163,7 @@ public class Main extends Application {
 	    // if the user selects the default menu item (which includes the app
 	    // name),
 	    // show the main app stage.
-	    MenuItem openItem = new MenuItem("Открыть");
+	    MenuItem openItem = new MenuItem("РћС‚РєСЂС‹С‚СЊ");
 	    openItem.addActionListener(event -> Platform.runLater(this::restoreShowStageFromTray));
 
 	    // the convention for tray icons seems to be to set the default icon
@@ -192,7 +191,7 @@ public class Main extends Application {
 	    // popup.addSeparator();
 	    // popup.add(exitItem);
 	    trayIcon.setPopupMenu(popup);
-	    trayIcon.setToolTip("W-Тарификатор \r\n Обработано: ");
+	    trayIcon.setToolTip("W-РўР°СЂРёС„РёРєР°С‚РѕСЂ \r\n РћР±СЂР°Р±РѕС‚Р°РЅРѕ: ");
 	    tray.add(trayIcon);
 	} catch (java.awt.AWTException | IOException e) {
 	    Debug.log.error(e.getMessage());

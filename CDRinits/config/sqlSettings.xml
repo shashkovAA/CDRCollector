@@ -2,7 +2,7 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <comment>Sql server connection properties</comment>
-<entry key="enableSaveCdrToDB">true</entry>
+<entry key="enableSaveCdrToDB">false</entry>
 <entry key="sqlServerLogin">java</entry>
 <entry key="sqlServerPort">1433</entry>
 <entry key="sqlServerPassword">javaconnect</entry>

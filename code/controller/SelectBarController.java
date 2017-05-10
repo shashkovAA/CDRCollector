@@ -143,7 +143,7 @@ public class SelectBarController {
 	txtDateTimeEnd.setDateTimeFormatter(formatter);
 
 	// String myDate = new java.text.SimpleDateFormat("dd/MM/yy").format(new
-	// java.util.Date()); //==============Получение текущей даты===========
+	// java.util.Date()); //==============пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ===========
 
 	// txtDateTimeBegin.setText("12.03.2017 23:59");
 
@@ -167,21 +167,19 @@ public class SelectBarController {
 
     @FXML
     private void clckFind(ActionEvent event) {
-	System.out.println("Кнопка Find");
+	System.out.println("РљРЅРѕРїРєР° Find");
 	try {
-	    // Загружаем fxml-файл и создаём новую сцену
-	    // для всплывающего диалогового окна.
+	    
 	    FXMLLoader loader = new FXMLLoader();
 
 	    loader.setLocation(getClass().getResource("../view/TableDiag.fxml"));
 
 	    AnchorPane page = (AnchorPane) loader.load();
 
-	    // Создаём диалоговое окно Stage.
-
+	    
 	    Stage dialogStage = new Stage();
 
-	    dialogStage.setTitle("Выборка данных");
+	    dialogStage.setTitle("Р’С‹Р±РѕСЂРєР° РґР°РЅРЅС‹С…");
 
 	    dialogStage.initModality(Modality.WINDOW_MODAL);
 
@@ -191,7 +189,7 @@ public class SelectBarController {
 
 	    dialogStage.setScene(scene);
 
-	    // Передаём адресата в контроллер.
+	    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
 
 	    tableDiagController = loader.getController();
 
@@ -199,8 +197,8 @@ public class SelectBarController {
 
 	    getDataAndCount();
 
-	    // Отображаем диалоговое окно и ждём, пока пользователь его не
-	    // закроет
+	    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ
+	    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 	    dialogStage.showAndWait();
 
@@ -232,7 +230,7 @@ public class SelectBarController {
 	    result = statement.executeQuery(sqlQuery);
 
 	    /*
-	     * Пример выполнения хранимой процедуры rowCount
+	     * пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ rowCount
 	     * 
 	     * sqlQuery="{call [dbo].[rowCount](?)}";
 	     * 

@@ -6,8 +6,8 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jfxtras"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/fest-assert"/>
 	<classpathentry kind="lib" path="C:/eclipse/controlsfx-8.40.12/controlsfx-8.40.12.jar" sourcepath="C:/eclipse/controlsfx-controlsfx-7403487e4989.zip"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/log4j"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/sqlConnectors"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/log4j"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/sqlDrivers"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

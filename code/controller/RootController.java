@@ -138,9 +138,9 @@ public class RootController implements Runnable {
     public void handleExitDialog() {
 
 	Alert alert = new Alert(AlertType.CONFIRMATION);
-	alert.setTitle("Выход из программы W-Тарификатор");
+	alert.setTitle("Р’С‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹ W-РўР°СЂРёС„РёРєР°С‚РѕСЂ");
 	alert.setHeaderText("");
-	alert.setContentText("Правда хотите выйти?");
+	alert.setContentText("РџСЂР°РІРґР° С…РѕС‚РёС‚Рµ РІС‹Р№С‚Рё?");
 
 	Optional<ButtonType> result = alert.showAndWait();
 
@@ -207,15 +207,15 @@ public class RootController implements Runnable {
 	String date = new java.text.SimpleDateFormat("dd.MM").format(new java.util.Date());
 	String time = new java.text.SimpleDateFormat("HH:mm:ss").format(new java.util.Date());
 
-	lblClientStatus.setText("Подключен(" + txtIp + ") в " + time + " " + date);
+	lblClientStatus.setText("РџРѕРґРєР»СЋС‡РµРЅ(" + txtIp + ") РІ " + time + " " + date);
     }
 
     public void changeTxtFieldStatusClientDisonnected() {
-	lblClientStatus.setText("Нет подключения");
+	lblClientStatus.setText("РќРµС‚ РїРѕРґРєР»СЋС‡РµРЅРёСЏ");
     }
 
     public void changeTxtFieldStatusClientWait() {
-	lblClientStatus.setText("Ожидание подключения");
+	lblClientStatus.setText("РћР¶РёРґР°РЅРёРµ РїРѕРґРєР»СЋС‡РµРЅРёСЏ");
     }
 
     @Override
